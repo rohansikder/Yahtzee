@@ -4,21 +4,120 @@
              x:Class="Yahtzee.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+        <Frame BackgroundColor="SeaGreen" Padding="15" CornerRadius="0">
+            <Label Text="Yahtzee" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+           
+        </Frame> 
+        <Button x:Name="Restart" Text="Restart"  CornerRadius="5" Margin="10,1,10,1" BackgroundColor="red"/>
+        <Grid BackgroundColor="SeaGreen" Margin="10" HeightRequest="150" WidthRequest="420" HorizontalOptions="Center" VerticalOptions="Center"
+              ColumnSpacing="1" RowSpacing="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <BoxView x:Name="Dice1" BackgroundColor="White" Grid.Row="0" Grid.Column="0" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="1" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="2" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="3" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="4" Margin="5" CornerRadius="5"/>
+
+            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="0" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="1" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="2" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="3" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="4" Margin="5" Text="Hold" CornerRadius="5"/>
+
+        </Grid>
+
+        <Grid BackgroundColor="SeaGreen" Margin="10" HeightRequest="400" WidthRequest="470" HorizontalOptions="Center" VerticalOptions="Center"
+              ColumnSpacing="1" RowSpacing="1">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+
+            <Button BackgroundColor="Orange" Grid.Row="0" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="1" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="2" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="3" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="4" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="5" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5"/>
+
+            <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="1" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="1" Grid.Column="1" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="2" Grid.Column="1" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="3" Grid.Column="1" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="4" Grid.Column="1" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="5" Grid.Column="1" Margin="5" CornerRadius="5"/>
+
+            <Label BackgroundColor="LightGreen" Grid.Row="0" Grid.Column="2" Margin="2" Text="One" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="1" Grid.Column="2" Margin="2" Text="Two" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="2" Grid.Column="2" Margin="2" Text="Three" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="3" Grid.Column="2" Margin="2" Text="Four" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="4" Grid.Column="2" Margin="2" Text="Five" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="5" Grid.Column="2" Margin="2" Text="Six" Padding="4"/>
+            <Label BackgroundColor="navy" Grid.Row="6" Grid.Column="0" Margin="2" Text="Section Bonus+35" Padding="4"/>
+            <Label BackgroundColor="Navy" Grid.Row="6" Grid.Column="1" Margin="2" Text="Get total of 63: 0" Padding="4"/>
+
+            <Button BackgroundColor="Orange" Grid.Row="0" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="1" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="2" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="3" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="4" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="5" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
+            <Button BackgroundColor="Orange" Grid.Row="6" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
+
+            <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="1" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="2" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="3" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="4" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="5" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <BoxView BackgroundColor="White" Grid.Row="6" Grid.Column="4" Margin="5" CornerRadius="5"/>
+
+            
+            <Label BackgroundColor="LightGreen" Grid.Row="0" Grid.Column="5" Margin="2" Text="Three of a kind" Padding="4" />
+            <Label BackgroundColor="LightGreen" Grid.Row="1" Grid.Column="5" Margin="2" Text="Four of a kind" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="2" Grid.Column="5" Margin="2" Text="Full House" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="3" Grid.Column="5" Margin="2" Text="Small straight" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="4" Grid.Column="5" Margin="2" Text="Large Straight" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="5" Grid.Column="5" Margin="2" Text="Yahtzee" Padding="4"/>
+            <Label BackgroundColor="LightGreen" Grid.Row="6" Grid.Column="5" Margin="2" Text="Chance" Padding="4"/>
+
+        </Grid>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5" >
+            <Button x:Name="Roll" Text="Roll Dice" Margin="0,0,10,0" CornerRadius="5"/>
+            <Button x:Name="Play" Text="Play"  CornerRadius="5"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5" >
+            <Label Text="Total:"/>
+        </StackLayout>
+
     </StackLayout>
 
 </ContentPage>
