@@ -111,12 +111,25 @@
             <Button x:Name="btnChance" BackgroundColor="Orange" Grid.Row="6" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5"/>
 
             <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <Label x:Name="threeKindValue" Text="0" Grid.Row="0" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            
             <BoxView BackgroundColor="White" Grid.Row="1" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <Label x:Name="fourKindValue" Text="0" Grid.Row="1" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            
             <BoxView BackgroundColor="White" Grid.Row="2" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <Label x:Name="houseValue" Text="0" Grid.Row="2" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            
             <BoxView BackgroundColor="White" Grid.Row="3" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <Label x:Name="smallStraightValue" Text="0" Grid.Row="3" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            
             <BoxView BackgroundColor="White" Grid.Row="4" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <Label x:Name="largeStraightValue" Text="0" Grid.Row="4" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            
             <BoxView BackgroundColor="White" Grid.Row="5" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <Label x:Name="yahtzeeValue" Text="0" Grid.Row="5" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            
             <BoxView BackgroundColor="White" Grid.Row="6" Grid.Column="4" Margin="5" CornerRadius="5"/>
+            <Label x:Name="chanceValue" Text="0" Grid.Row="6" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
 
             
             <Label BackgroundColor="LightGreen" Grid.Row="0" Grid.Column="5" Margin="2" Text="Three of a kind" Padding="4" />

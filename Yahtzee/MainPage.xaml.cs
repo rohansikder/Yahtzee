@@ -24,7 +24,7 @@ namespace Yahtzee
             InitializeComponent();
         }
 
-        private void lowerSection()
+        private void upperSection()
         {
             int oneSum = 0;
             int twoSum = 0;
@@ -179,6 +179,30 @@ namespace Yahtzee
 
         }
 
+        private void lowerSection()
+        {
+            int threeKindSum = 0;
+            int fourKindSum = 0;
+            int houseSum = 0;
+            int SstraightSum = 0;
+            int LStraightSum = 0;
+            int yahtzeeSum = 0;
+            int chanceSum;
+
+            //Note: use upperSection to calculate the rest
+
+            if (diceRoll1 == diceRoll2 && diceRoll2 == diceRoll3 && diceRoll3 == diceRoll4 && diceRoll4 == diceRoll5)
+            {
+                yahtzeeSum = 50;
+            }
+            yahtzeeValue.Text = yahtzeeSum.ToString();
+
+            chanceSum = diceRoll1 + diceRoll2 + diceRoll3 + diceRoll4 + diceRoll5;
+            chanceValue.Text = chanceSum.ToString();
+
+
+        }
+
         private void BtnDiceRollClicked(object sender, EventArgs e)
         {
 
@@ -188,11 +212,21 @@ namespace Yahtzee
                 random = new Random();
             }
 
+      
             diceRoll1 = random.Next(1, 7);
             diceRoll2 = random.Next(1, 7);
             diceRoll3 = random.Next(1, 7);
             diceRoll4 = random.Next(1, 7);
             diceRoll5 = random.Next(1, 7);
+            
+
+            /*Used To test if combinations are working
+            diceRoll1 = 6;
+            diceRoll2 = 6;
+            diceRoll3 = 6;
+            diceRoll4 = 6;
+            diceRoll5 = 6;
+            */
 
             Dice1.Text = diceRoll1.ToString();
             Dice2.Text = diceRoll2.ToString();
@@ -200,7 +234,8 @@ namespace Yahtzee
             Dice4.Text = diceRoll4.ToString();
             Dice5.Text = diceRoll5.ToString();
 
-            lowerSection();  
+            upperSection();
+            lowerSection();
         }
 
 
