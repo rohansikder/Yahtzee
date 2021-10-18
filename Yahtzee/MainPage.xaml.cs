@@ -10,6 +10,9 @@ namespace Yahtzee
 {
     public partial class MainPage : ContentPage
     {
+        int total;
+        int bonus;
+        int diceFormat = 0;
 
         int diceRoll1 = 0;
         int diceRoll2 = 0;
@@ -270,7 +273,7 @@ namespace Yahtzee
             if(hold3 == true)diceRoll3 = random.Next(1, 7);
             if(hold4 == true)diceRoll4 = random.Next(1, 7);
             if(hold5 == true)diceRoll5 = random.Next(1, 7);
-            
+
 
             /*Used To test if combinations are working
             diceRoll1 = 1;
@@ -288,7 +291,7 @@ namespace Yahtzee
 
             upperSection();
             lowerSection();
-            
+
         }
 
         private void btnHold1_Clicked(object sender, EventArgs e)
@@ -372,5 +375,131 @@ namespace Yahtzee
                 btnHold5.Text = "Hold";
             }
         }
+
+        private void resetHold()
+        {
+            btnHold1.BackgroundColor = Color.Gray;
+            btnHold2.BackgroundColor = Color.Gray;
+            btnHold3.BackgroundColor = Color.Gray;
+            btnHold4.BackgroundColor = Color.Gray;
+            btnHold5.BackgroundColor = Color.Gray;
+            btnHold1.Text = "Hold";
+            btnHold2.Text = "Hold";
+            btnHold3.Text = "Hold";
+            btnHold4.Text = "Hold";
+            btnHold5.Text = "Hold";
+        }
+
+        private void resetDice()
+        {
+            dice1.Text = diceFormat.ToString();
+            dice2.Text = diceFormat.ToString();
+            dice3.Text = diceFormat.ToString();
+            dice4.Text = diceFormat.ToString();
+            dice5.Text = diceFormat.ToString();
+        }
+
+        private void btnOne_Clicked(object sender, EventArgs e)
+        {
+            if(diceRoll1 != 0)
+            {
+            total = oneSum + total;
+            bonus = oneSum + bonus; 
+            userTotal.Text = "Total: " + total;
+            userBonus.Text = "Get total of 63: " + bonus;
+            btnOne.IsEnabled = false;
+            resetDice();
+            resetHold();
+            }
+        }
+
+        private void btnTwo_Clicked(object sender, EventArgs e)
+        {
+            if (diceRoll1 != 0)
+            {
+                total = twoSum + total;
+                bonus = twoSum + bonus;
+                userTotal.Text = "Total: " + total;
+                userBonus.Text = "Get total of 63: " + bonus;
+                btnTwo.IsEnabled = false;
+                resetDice();
+                resetHold();
+            }
+        }
+
+        private void btnThree_Clicked(object sender, EventArgs e)
+        {
+            if (diceRoll1 != '0')
+            {
+                total = threeSum + total;
+                bonus = threeSum + bonus;
+                userTotal.Text = "Total: " + total;
+                userBonus.Text = "Get total of 63: " + bonus;
+                btnThree.IsEnabled = false;
+                resetDice();
+                resetHold();
+            }
+        }
+
+        private void btnFour_Clicked(object sender, EventArgs e)
+        {
+            if (diceRoll1 != 0)
+            {
+                total = fourSum + total;
+                bonus = fourSum + bonus;
+                userTotal.Text = "Total: " + total;
+                userBonus.Text = "Get total of 63: " + bonus;
+                btnFour.IsEnabled = false;
+                resetDice();
+                resetHold();
+            }
+        }
+
+        private void btnFive_Clicked(object sender, EventArgs e)
+        {
+            if (diceRoll1 != 0)
+            {
+                total = fiveSum + total;
+                bonus = fiveSum + bonus;
+                userTotal.Text = "Total: " + total;
+                userBonus.Text = "Get total of 63: " + bonus;
+                btnFive.IsEnabled = false;
+                resetDice();
+                resetHold();
+            }
+        }
+
+        private void btnSix_Clicked(object sender, EventArgs e)
+        {
+            if (diceRoll1 != 0)
+            {
+                total = sixSum + total;
+                bonus = sixSum + bonus;
+                userTotal.Text = "Total: " + total;
+                userBonus.Text = "Get total of 63: " + bonus;
+                btnSix.IsEnabled = false;
+                resetDice();
+                resetHold();
+            }    
+        }
+
+        private void Restart_Clicked(object sender, EventArgs e)
+        {
+            resetDice();
+            resetHold();
+            total = 0;
+            bonus = 0;
+            userTotal.Text = "Total: " + total;
+            userBonus.Text = "Get total of 63: " + bonus;
+            btnOne.IsEnabled = true;
+            btnTwo.IsEnabled = true;
+            btnThree.IsEnabled = true;
+            btnFour.IsEnabled = true;
+            btnFive.IsEnabled = true;
+            btnSix.IsEnabled = true;
+           
+
+        }
+
     }//End of public class
 }//End namespace

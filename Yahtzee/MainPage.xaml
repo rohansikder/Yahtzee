@@ -8,7 +8,7 @@
             <Label Text="Yahtzee" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Italic"/>
            
         </Frame> 
-        <Button x:Name="Restart" Text="Restart"  CornerRadius="5" Margin="100,1,100,1" BackgroundColor="red"/>
+        <Button x:Name="Restart" Clicked="Restart_Clicked" Text="Restart"  CornerRadius="5" Margin="100,1,100,1" BackgroundColor="red"/>
         <Grid  Margin="10" HeightRequest="150" WidthRequest="400" HorizontalOptions="Center" VerticalOptions="Center"
               ColumnSpacing="1" RowSpacing="1">
 
@@ -68,12 +68,12 @@
 
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="btnOne" BackgroundColor="Orange" Grid.Row="0" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
-        <Button x:Name="btnTwo" BackgroundColor="Orange" Grid.Row="1" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
-        <Button x:Name="btnThree" BackgroundColor="Orange" Grid.Row="2" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
-        <Button x:Name="btnFour" BackgroundColor="Orange" Grid.Row="3" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
-        <Button x:Name="btnFive" BackgroundColor="Orange" Grid.Row="4" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
-        <Button x:Name="btnSix" BackgroundColor="Orange" Grid.Row="5" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
+        <Button x:Name="btnOne" Clicked="btnOne_Clicked" BackgroundColor="Orange" Grid.Row="0" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
+        <Button x:Name="btnTwo" Clicked="btnTwo_Clicked" BackgroundColor="Orange" Grid.Row="1" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
+        <Button x:Name="btnThree" Clicked="btnThree_Clicked" BackgroundColor="Orange" Grid.Row="2" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
+        <Button x:Name="btnFour" Clicked="btnFour_Clicked" BackgroundColor="Orange" Grid.Row="3" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
+        <Button x:Name="btnFive" Clicked="btnFive_Clicked" BackgroundColor="Orange" Grid.Row="4" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
+        <Button x:Name="btnSix" Clicked="btnSix_Clicked" BackgroundColor="Orange" Grid.Row="5" Grid.Column="0" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
 
         <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="1" Margin="5" CornerRadius="5"/>
         <Label x:Name="oneValue" Text="0" Grid.Row="0" Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
@@ -100,7 +100,7 @@
         <Label BackgroundColor="LightGreen" Grid.Row="4" Grid.Column="2" Margin="2" Text="Five" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
         <Label BackgroundColor="LightGreen" Grid.Row="5" Grid.Column="2" Margin="2" Text="Six" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
         <Label BackgroundColor="navy" Grid.Row="6" Grid.Column="0" Margin="2" Text="Section Bonus+35" Padding="4"/>
-        <Label BackgroundColor="Navy" Grid.Row="6" Grid.Column="1" Margin="2" Text="Get total of 63: 0" Padding="4" />
+        <Label x:Name="userBonus" BackgroundColor="Navy" Grid.Row="6" Grid.Column="1" Margin="2" Text="Get total of 63: 0" Padding="4" />
 
         <Button x:Name="btnThreeKind" BackgroundColor="Orange" Grid.Row="0" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
         <Button x:Name="btnFourKind" BackgroundColor="Orange" Grid.Row="1" Grid.Column="3" Margin="5" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
@@ -148,7 +148,7 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5" >
-            <Label Text="Total: 0" FontSize="Medium"/>
+            <Label x:Name="userTotal" Text="Total: 0" FontSize="Medium"/>
         </StackLayout>
         
     </StackLayout>
