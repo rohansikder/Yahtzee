@@ -24,25 +24,25 @@
             </Grid.ColumnDefinitions>
 
             <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="0" Margin="5" CornerRadius="5"/>
-            <Label x:Name="Dice1" Text="0" Grid.Row="0" Grid.Column="0" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            <Label x:Name="dice1" Text="0" Grid.Row="0" Grid.Column="0" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
 
             <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="1" Margin="5" CornerRadius="5"/>
-            <Label x:Name="Dice2" Text="0" Grid.Row="0" Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            <Label x:Name="dice2" Text="0" Grid.Row="0" Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
             
             <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="2" Margin="5" CornerRadius="5"/>
-            <Label x:Name="Dice3" Text="0" Grid.Row="0" Grid.Column="2" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            <Label x:Name="dice3" Text="0" Grid.Row="0" Grid.Column="2" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
             
             <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="3" Margin="5" CornerRadius="5"/>
-            <Label x:Name="Dice4" Text="0" Grid.Row="0" Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            <Label x:Name="dice4" Text="0" Grid.Row="0" Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
             
             <BoxView BackgroundColor="White" Grid.Row="0" Grid.Column="4" Margin="5" CornerRadius="5"/>
-            <Label x:Name="Dice5" Text="0" Grid.Row="0" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
+            <Label x:Name="dice5" Text="0" Grid.Row="0" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
             
-            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="0" Margin="5" Text="Hold" CornerRadius="5"/>
-            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="1" Margin="5" Text="Hold" CornerRadius="5"/>
-            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="2" Margin="5" Text="Hold" CornerRadius="5"/>
-            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="3" Margin="5" Text="Hold" CornerRadius="5"/>
-            <Button BackgroundColor="Gray" Grid.Row="1" Grid.Column="4" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button x:Name="btnHold1" Clicked="btnHold1_Clicked" BackgroundColor="Gray" Grid.Row="1" Grid.Column="0" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button x:Name="btnHold2" Clicked="btnHold2_Clicked" BackgroundColor="Gray" Grid.Row="1" Grid.Column="1" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button x:Name="btnHold3" Clicked="btnHold3_Clicked" BackgroundColor="Gray" Grid.Row="1" Grid.Column="2" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button x:Name="btnHold4" Clicked="btnHold4_Clicked" BackgroundColor="Gray" Grid.Row="1" Grid.Column="3" Margin="5" Text="Hold" CornerRadius="5"/>
+            <Button x:Name="btnHold5" Clicked="btnHold5_Clicked" BackgroundColor="Gray" Grid.Row="1" Grid.Column="4" Margin="5" Text="Hold" CornerRadius="5"/>
 
         </Grid>
 

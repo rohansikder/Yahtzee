@@ -24,6 +24,12 @@ namespace Yahtzee
         int fiveSum;
         int sixSum;
 
+        bool hold1 = true;
+        bool hold2 = true;
+        bool hold3 = true;
+        bool hold4 = true;
+        bool hold5 = true;
+
         Random random;
 
         public MainPage()
@@ -259,11 +265,11 @@ namespace Yahtzee
             }
 
             /**/
-            diceRoll1 = random.Next(1, 7);
-            diceRoll2 = random.Next(1, 7);
-            diceRoll3 = random.Next(1, 7);
-            diceRoll4 = random.Next(1, 7);
-            diceRoll5 = random.Next(1, 7);
+            if(hold1 == true)diceRoll1 = random.Next(1, 7);
+            if(hold2 == true)diceRoll2 = random.Next(1, 7);
+            if(hold3 == true)diceRoll3 = random.Next(1, 7);
+            if(hold4 == true)diceRoll4 = random.Next(1, 7);
+            if(hold5 == true)diceRoll5 = random.Next(1, 7);
             
 
             /*Used To test if combinations are working
@@ -274,16 +280,97 @@ namespace Yahtzee
             diceRoll5 = 5;
             */
 
-            Dice1.Text = diceRoll1.ToString();
-            Dice2.Text = diceRoll2.ToString();
-            Dice3.Text = diceRoll3.ToString();
-            Dice4.Text = diceRoll4.ToString();
-            Dice5.Text = diceRoll5.ToString();
+            dice1.Text = diceRoll1.ToString();
+            dice2.Text = diceRoll2.ToString();
+            dice3.Text = diceRoll3.ToString();
+            dice4.Text = diceRoll4.ToString();
+            dice5.Text = diceRoll5.ToString();
 
             upperSection();
             lowerSection();
+            
         }
 
+        private void btnHold1_Clicked(object sender, EventArgs e)
+        {
+            if(hold1)
+            { 
+            hold1 = false;
+            btnHold1.BackgroundColor = Color.Red;
+            btnHold1.Text = "Held";
+            }
+            else
+            {
+                hold1 = true;
+                btnHold1.BackgroundColor = Color.Gray;
+                btnHold1.Text = "Hold";
+            }
+        }
 
+        private void btnHold2_Clicked(object sender, EventArgs e)
+        {
+            if (hold2)
+            {
+                hold2 = false;
+                btnHold2.BackgroundColor = Color.Red;
+                btnHold2.Text = "Held";
+            }
+            else
+            {
+                hold2 = true;
+                btnHold2.BackgroundColor = Color.Gray;
+                btnHold2.Text = "Hold";
+            }
+        }
+
+        private void btnHold3_Clicked(object sender, EventArgs e)
+        {
+            if (hold3)
+            {
+                hold3 = false;
+                btnHold3.BackgroundColor = Color.Red;
+                btnHold3.Text = "Held";
+            }
+            else
+            {
+                hold3 = true;
+                btnHold3.BackgroundColor = Color.Gray;
+                btnHold3.Text = "Hold";
+            }
+
+        }
+
+        private void btnHold4_Clicked(object sender, EventArgs e)
+        {
+            if (hold4)
+            {
+                hold4 = false;
+                btnHold4.BackgroundColor = Color.Red;
+                btnHold4.Text = "Held";
+            }
+            else
+            {
+                hold4 = true;
+                btnHold4.BackgroundColor = Color.Gray;
+                btnHold4.Text = "Hold";
+            }
+
+        }
+
+        private void btnHold5_Clicked(object sender, EventArgs e)
+        {
+            if (hold5)
+            {
+                hold5 = false;
+                btnHold5.BackgroundColor = Color.Red;
+                btnHold5.Text = "Held";
+            }
+            else
+            {
+                hold5 = true;
+                btnHold5.BackgroundColor = Color.Gray;
+                btnHold5.Text = "Hold";
+            }
+        }
     }//End of public class
 }//End namespace
