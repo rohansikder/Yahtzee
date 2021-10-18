@@ -17,6 +17,13 @@ namespace Yahtzee
         int diceRoll4 = 0;
         int diceRoll5 = 0;
 
+        int oneSum;
+        int twoSum;
+        int threeSum;
+        int fourSum;
+        int fiveSum;
+        int sixSum;
+
         Random random;
 
         public MainPage()
@@ -26,12 +33,12 @@ namespace Yahtzee
 
         private void upperSection()
         {
-            int oneSum = 0;
-            int twoSum = 0;
-            int threeSum = 0;
-            int fourSum = 0;
-            int fiveSum = 0;
-            int sixSum = 0;
+            oneSum = 0;
+            twoSum = 0;
+            threeSum = 0;
+            fourSum = 0;
+            fiveSum = 0;
+            sixSum = 0;
 
             //calc for one combo
             if (diceRoll1 == 1)
@@ -190,13 +197,52 @@ namespace Yahtzee
             int chanceSum;
 
             //Note: use upperSection to calculate the rest
+            //ThreeKind combo
+            if(oneSum == 3 || twoSum == 6 || threeSum == 9 || fourSum == 12 || fiveSum == 15 || sixSum == 16)
+            {
+                threeKindSum = diceRoll1 + diceRoll2 + diceRoll3 + diceRoll4 + diceRoll5;
+            }
+            threeKindValue.Text = threeKindSum.ToString();
 
-            if (diceRoll1 == diceRoll2 && diceRoll2 == diceRoll3 && diceRoll3 == diceRoll4 && diceRoll4 == diceRoll5)
+            //FourKind combo
+            if (oneSum == 4 || twoSum == 8 || threeSum == 12 || fourSum == 16 || fiveSum == 20 || sixSum == 24)
+            {
+                fourKindSum = diceRoll1 + diceRoll2 + diceRoll3 + diceRoll4 + diceRoll5;
+            }
+            fourKindValue.Text = fourKindSum.ToString();
+
+            //FullHouse combo
+            if ((oneSum == 3 || twoSum == 6 || threeSum == 9 || fourSum == 12 || fiveSum == 15 || sixSum == 16)
+                && (oneSum == 2 || twoSum == 4 || threeSum == 6 || fourSum == 8 || fiveSum == 10 || sixSum == 12))
+            {
+                houseSum = 25;
+            }
+            houseValue.Text = houseSum.ToString();
+
+            //SmallStraight combo
+            if((oneSum == 1 && twoSum == 2 && threeSum == 3 && fourSum == 4) || (twoSum == 2 && threeSum == 3 && fourSum == 4 && fiveSum == 5) 
+                || (threeSum == 3 && fourSum == 4 && fiveSum == 5 && sixSum == 6))
+            {
+                SstraightSum = 30;
+            }
+            smallStraightValue.Text = SstraightSum.ToString();
+
+            //LargeStraight Combo
+            if ((oneSum == 1 && twoSum == 2 && threeSum == 3 && fourSum == 4 && fiveSum == 5) 
+                || (twoSum == 2 && threeSum == 3 && fourSum == 4 && fiveSum == 5 && sixSum == 6))
+            {
+                LStraightSum = 40;
+            }
+            largeStraightValue.Text = LStraightSum.ToString();
+
+                //Yhatzee combo
+                if (diceRoll1 == diceRoll2 && diceRoll2 == diceRoll3 && diceRoll3 == diceRoll4 && diceRoll4 == diceRoll5)
             {
                 yahtzeeSum = 50;
             }
             yahtzeeValue.Text = yahtzeeSum.ToString();
 
+            //chance combo
             chanceSum = diceRoll1 + diceRoll2 + diceRoll3 + diceRoll4 + diceRoll5;
             chanceValue.Text = chanceSum.ToString();
 
@@ -212,7 +258,7 @@ namespace Yahtzee
                 random = new Random();
             }
 
-      
+            /**/
             diceRoll1 = random.Next(1, 7);
             diceRoll2 = random.Next(1, 7);
             diceRoll3 = random.Next(1, 7);
@@ -221,11 +267,11 @@ namespace Yahtzee
             
 
             /*Used To test if combinations are working
-            diceRoll1 = 6;
-            diceRoll2 = 6;
-            diceRoll3 = 6;
-            diceRoll4 = 6;
-            diceRoll5 = 6;
+            diceRoll1 = 1;
+            diceRoll2 = 2;
+            diceRoll3 = 3;
+            diceRoll4 = 4;
+            diceRoll5 = 5;
             */
 
             Dice1.Text = diceRoll1.ToString();
