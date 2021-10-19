@@ -266,7 +266,7 @@ namespace Yahtzee
         {
             rolls--;
             Roll.Text = "Roll Dice: " + rolls;
-            if (rolls >= 0)
+            if (rolls >= 1)
             {
                 // generate a random number between 1 and 6
                 if (random == null)
@@ -610,6 +610,7 @@ namespace Yahtzee
 
             rolls = 3;
             Roll.IsEnabled = true;
+            Roll.Text = "Roll Dice: 3";
 
             dice1.Text = diceRoll1.ToString();
             dice2.Text = diceRoll2.ToString();
@@ -671,6 +672,7 @@ namespace Yahtzee
                 bonus = 0;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + bonus;
+                Roll.Text = "Roll Dice: 3";
                 btnOne.IsEnabled = true;
                 btnTwo.IsEnabled = true;
                 btnThree.IsEnabled = true;
