@@ -398,7 +398,7 @@ namespace Yahtzee
                 if (total >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal + "          .";
+                lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
             }
@@ -414,7 +414,7 @@ namespace Yahtzee
                 if (total >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal + "          .";
+                lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
             }
@@ -430,7 +430,7 @@ namespace Yahtzee
                 if (total >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal + "          .";
+                lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
             }
@@ -446,7 +446,7 @@ namespace Yahtzee
                 if (total >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal + "          .";
+                lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
             }
@@ -461,7 +461,7 @@ namespace Yahtzee
                 upperTotal = upperTotal + fiveSum; if (total >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal + "          .";
+                lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
             }
@@ -477,7 +477,7 @@ namespace Yahtzee
                 if (total >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal + "          .";
+                lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
             }
@@ -491,7 +491,7 @@ namespace Yahtzee
                 btnThreeKind.IsEnabled = false;
                 lowerTotal = lowerTotal + threeKindSum;
                 userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = ".          Lower Total: " + lowerTotal;
+                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
             }
@@ -505,7 +505,7 @@ namespace Yahtzee
                 btnFourKind.IsEnabled = false;
                 lowerTotal = lowerTotal + fourKindSum;
                 userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = ".          Lower Total: " + lowerTotal;
+                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
             }
@@ -519,7 +519,7 @@ namespace Yahtzee
                 btnHouse.IsEnabled = false;
                 lowerTotal = lowerTotal + houseSum;
                 userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = ".          Lower Total: " + lowerTotal;
+                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
             }
@@ -533,7 +533,7 @@ namespace Yahtzee
                 btnSmallStraight.IsEnabled = false;
                 lowerTotal = lowerTotal + SstraightSum;
                 userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = ".          Lower Total: " + lowerTotal;
+                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
             }
@@ -547,7 +547,7 @@ namespace Yahtzee
                     btnLargeStraight.IsEnabled = false;
                     lowerTotal = lowerTotal + LStraightSum;
                     userTotal.Text = "Total: " + total;
-                    lblLowerTotal.Text = ".          Lower Total: " + lowerTotal;
+                    lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                     resetDice();
                     resetHold();
                 }
@@ -561,7 +561,7 @@ namespace Yahtzee
                 btnYahtzee.IsEnabled = false;
                 lowerTotal = lowerTotal + yahtzeeSum;
                 userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = ".          Lower Total: " + lowerTotal;
+                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
             }
@@ -575,7 +575,7 @@ namespace Yahtzee
                 btnChance.IsEnabled = false;
                 lowerTotal = lowerTotal + chanceSum;
                 userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = ".          Lower Total: " + lowerTotal;
+                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
             }
@@ -646,7 +646,7 @@ namespace Yahtzee
             fourValue.Text = fourSum.ToString();
             fiveValue.Text = fiveSum.ToString();
             sixValue.Text = sixSum.ToString();
-            lblUpperTotal.Text = "Upper Total: 0          .";
+            lblUpperTotal.Text = "Upper Total: 0";
 
 
             threeKindValue.Text = threeKindSum.ToString();
@@ -656,7 +656,7 @@ namespace Yahtzee
             largeStraightValue.Text = LStraightSum.ToString();
             yahtzeeValue.Text = yahtzeeSum.ToString();
             chanceValue.Text = chanceSum.ToString();
-            lblLowerTotal.Text = ".          Lower Total: 0";
+            lblLowerTotal.Text = "Lower Total: 0";
         }
 
         async void Restart_Clicked(object sender, EventArgs e)
