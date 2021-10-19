@@ -12,6 +12,7 @@ namespace Yahtzee
     {
         int total;
         int bonus = 35;
+        int rolls = 3;
 
         int diceRoll1 = 0;
         int diceRoll2 = 0;
@@ -263,38 +264,46 @@ namespace Yahtzee
 
         private void BtnDiceRollClicked(object sender, EventArgs e)
         {
-
-            // generate a random number between 1 and 6
-            if (random == null)
+            rolls--;
+            Roll.Text = "Roll Dice: " + rolls;
+            if (rolls >= 0)
             {
-                random = new Random();
+                // generate a random number between 1 and 6
+                if (random == null)
+                {
+                    random = new Random();
+                }
+
+                /**/
+                if (hold1 == true) diceRoll1 = random.Next(1, 7);
+                if (hold2 == true) diceRoll2 = random.Next(1, 7);
+                if (hold3 == true) diceRoll3 = random.Next(1, 7);
+                if (hold4 == true) diceRoll4 = random.Next(1, 7);
+                if (hold5 == true) diceRoll5 = random.Next(1, 7);
+
+
+                /*Used To test if combinations are working
+                diceRoll1 = 1;
+                diceRoll2 = 2;
+                diceRoll3 = 3;
+                diceRoll4 = 4;
+                diceRoll5 = 5;
+                */
+
+                dice1.Text = diceRoll1.ToString();
+                dice2.Text = diceRoll2.ToString();
+                dice3.Text = diceRoll3.ToString();
+                dice4.Text = diceRoll4.ToString();
+                dice5.Text = diceRoll5.ToString();
+
+                upperSection();
+                lowerSection();
             }
-
-            /**/
-            if (hold1 == true) diceRoll1 = random.Next(1, 7);
-            if (hold2 == true) diceRoll2 = random.Next(1, 7);
-            if (hold3 == true) diceRoll3 = random.Next(1, 7);
-            if (hold4 == true) diceRoll4 = random.Next(1, 7);
-            if (hold5 == true) diceRoll5 = random.Next(1, 7);
-
-
-            /*Used To test if combinations are working
-            diceRoll1 = 1;
-            diceRoll2 = 2;
-            diceRoll3 = 3;
-            diceRoll4 = 4;
-            diceRoll5 = 5;
-            */
-
-            dice1.Text = diceRoll1.ToString();
-            dice2.Text = diceRoll2.ToString();
-            dice3.Text = diceRoll3.ToString();
-            dice4.Text = diceRoll4.ToString();
-            dice5.Text = diceRoll5.ToString();
-
-            upperSection();
-            lowerSection();
-
+            else 
+            {
+                Roll.IsEnabled = false;
+            }
+            
         }
 
         private void btnHold1_Clicked(object sender, EventArgs e)
@@ -599,6 +608,9 @@ namespace Yahtzee
             diceRoll4 = 0;
             diceRoll5 = 0;
 
+            rolls = 3;
+            Roll.IsEnabled = true;
+
             dice1.Text = diceRoll1.ToString();
             dice2.Text = diceRoll2.ToString();
             dice3.Text = diceRoll3.ToString();
@@ -654,6 +666,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 resetSum();
+                rolls = 3;
                 total = 0;
                 bonus = 0;
                 userTotal.Text = "Total: " + total;
