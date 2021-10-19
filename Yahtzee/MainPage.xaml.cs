@@ -266,7 +266,7 @@ namespace Yahtzee
         {
             rolls--;
             Roll.Text = "Roll Dice: " + rolls;
-            if (rolls >= 1)
+            if (rolls >= 0)
             {
                 // generate a random number between 1 and 6
                 if (random == null)

@@ -149,7 +149,7 @@
         </StackLayout>
 
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-            <Label x:Name="userTotal" Text="Total: 0" FontSize="Medium"/>
+            <Label x:Name="userTotal" Text="Total: 0" FontSize="Medium"  Margin="0,0,0,10" />
         </StackLayout>
 
     </StackLayout>
