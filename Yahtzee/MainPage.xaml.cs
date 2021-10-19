@@ -388,8 +388,9 @@ namespace Yahtzee
             }
         }
 
-        private void btnOne_Clicked(object sender, EventArgs e)
+        private async void btnOne_Clicked(object sender, EventArgs e)
         {
+            
             if (diceRoll1 != 0)
             {
                 total = oneSum + total;
@@ -402,9 +403,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnTwo_Clicked(object sender, EventArgs e)
+        private async void btnTwo_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -418,9 +423,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnThree_Clicked(object sender, EventArgs e)
+        private async void btnThree_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != '0')
             {
@@ -434,9 +443,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnFour_Clicked(object sender, EventArgs e)
+        private async void btnFour_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -450,9 +463,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnFive_Clicked(object sender, EventArgs e)
+        private async void btnFive_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -465,9 +482,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnSix_Clicked(object sender, EventArgs e)
+        private async void btnSix_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -481,9 +502,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnThreeKind_Clicked(object sender, EventArgs e)
+        private async void btnThreeKind_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -495,9 +520,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnFourKind_Clicked(object sender, EventArgs e)
+        private async void btnFourKind_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -509,9 +538,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnHouse_Clicked(object sender, EventArgs e)
+        private async void btnHouse_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -523,9 +556,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnSmallStraight_Clicked(object sender, EventArgs e)
+        private async void btnSmallStraight_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -537,9 +574,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnLargeStraight_Clicked(object sender, EventArgs e)
+        private async void btnLargeStraight_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
                 {
@@ -551,9 +592,13 @@ namespace Yahtzee
                     resetDice();
                     resetHold();
                 }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnYahtzee_Clicked(object sender, EventArgs e)
+        private async void btnYahtzee_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -565,9 +610,13 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
             }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
         }
 
-        private void btnChance_Clicked(object sender, EventArgs e)
+        private async void btnChance_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 != 0)
             {
@@ -578,6 +627,10 @@ namespace Yahtzee
                 lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
+            }
+            else
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
         }
 
@@ -659,7 +712,7 @@ namespace Yahtzee
             lblLowerTotal.Text = "Lower Total: 0";
         }
 
-        async void Restart_Clicked(object sender, EventArgs e)
+        private async void Restart_Clicked(object sender, EventArgs e)
         {
             var confirmed = await DisplayAlert("Confirm", "Are you sure?", "Yes", "No");
             if (confirmed) 
