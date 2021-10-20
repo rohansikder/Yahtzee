@@ -225,7 +225,7 @@ namespace Yahtzee
             fourKindValue.Text = fourKindSum.ToString();
 
             //FullHouse combo
-            if ((oneSum == 3 || twoSum == 6 || threeSum == 9 || fourSum == 12 || fiveSum == 15 || sixSum == 16)
+            if ((oneSum == 3 || twoSum == 6 || threeSum == 9 || fourSum == 12 || fiveSum == 15 || sixSum == 18)
                 && (oneSum == 2 || twoSum == 4 || threeSum == 6 || fourSum == 8 || fiveSum == 10 || sixSum == 12))
             {
                 houseSum = 25;
@@ -671,11 +671,11 @@ namespace Yahtzee
 
         private void resetHold()
         {
-            btnHold1.BackgroundColor = Color.Gray;
-            btnHold2.BackgroundColor = Color.Gray;
-            btnHold3.BackgroundColor = Color.Gray;
-            btnHold4.BackgroundColor = Color.Gray;
-            btnHold5.BackgroundColor = Color.Gray;
+            btnHold1.BackgroundColor = Color.DimGray;
+            btnHold2.BackgroundColor = Color.DimGray;
+            btnHold3.BackgroundColor = Color.DimGray;
+            btnHold4.BackgroundColor = Color.DimGray;
+            btnHold5.BackgroundColor = Color.DimGray;
             btnHold1.Text = "Hold";
             btnHold2.Text = "Hold";
             btnHold3.Text = "Hold";
