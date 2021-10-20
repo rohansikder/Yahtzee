@@ -7,8 +7,8 @@
         <Frame BackgroundColor="#168aad" Padding="15" CornerRadius="15">
             <Label Text="Yahtzee" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Italic"/>
         </Frame>
-        <Button x:Name="Restart" Clicked="Restart_Clicked" Text="Restart"  CornerRadius="5" Margin="100,1,100,1" BackgroundColor="red"/>
-        <Grid  Margin="1" HeightRequest="150" WidthRequest="400" HorizontalOptions="Center" VerticalOptions="Center"
+        <Button x:Name="Restart" Clicked="Restart_Clicked" Text="Restart"  CornerRadius="5" Margin="100,1,100,1" BackgroundColor="red" FontSize="Medium"/>
+        <Grid  Margin="1" HeightRequest="150" WidthRequest="600" HorizontalOptions="Center" VerticalOptions="Center"
               ColumnSpacing="1" RowSpacing="1">
 
             <Grid.RowDefinitions>
@@ -45,7 +45,7 @@
 
         </Grid>
 
-        <Grid BackgroundColor="#1a759f" Margin="1" HeightRequest="500" WidthRequest="470" HorizontalOptions="Center" VerticalOptions="Center"
+        <Grid BackgroundColor="#1a759f" Margin="1" HeightRequest="600" WidthRequest="470" HorizontalOptions="Center" VerticalOptions="Center"
               ColumnSpacing="1" RowSpacing="1" >
            
 
@@ -98,8 +98,8 @@
             <Label BackgroundColor="#76c893" Grid.Row="3" Grid.Column="2" Margin="3" Text="Four" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
             <Label BackgroundColor="#76c893" Grid.Row="4" Grid.Column="2" Margin="3" Text="Five" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
             <Label BackgroundColor="#76c893" Grid.Row="5" Grid.Column="2" Margin="3" Text="Six" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
-            <Label BackgroundColor="#76c893" Grid.Row="6" Grid.Column="0" Margin="2,1,2,5" Text="Section Bonus: +35" Padding="5" TextColor="White"/>
-            <Label x:Name="userBonus" BackgroundColor="#76c893" Grid.Row="6" Grid.Column="1" Margin="1,1,1,5" Text="Get total of 63: 0" Padding="5" TextColor="White"/>
+            <Label BackgroundColor="#76c893" Grid.Row="6" Grid.Column="0" Margin="2,1,2,5" Text="Section Bonus: +35" Padding="5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
+            <Label x:Name="userBonus" BackgroundColor="#76c893" Grid.Row="6" Grid.Column="1" Margin="1,1,1,5" Text="Get total of 63: 0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" TextColor="White"/>
 
             <Button x:Name="btnThreeKind" Clicked="btnThreeKind_Clicked" BackgroundColor="#ff8800" Grid.Row="0" Grid.Column="3" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
             <Button x:Name="btnFourKind" Clicked="btnFourKind_Clicked" BackgroundColor="#ff8800" Grid.Row="1" Grid.Column="3" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
