@@ -306,85 +306,120 @@ namespace Yahtzee
             
         }
 
-        private void btnHold1_Clicked(object sender, EventArgs e)
+        private async void btnHold1_Clicked(object sender, EventArgs e)
         {
-            if (hold1)
+            if (diceRoll1 == 0)
             {
-                hold1 = false;
-                btnHold1.BackgroundColor = Color.Red;
-                btnHold1.Text = "Held";
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
             else
             {
-                hold1 = true;
-                btnHold1.BackgroundColor = Color.Gray;
-                btnHold1.Text = "Hold";
+                if (hold1)
+                {
+                    hold1 = false;
+                    btnHold1.BackgroundColor = Color.Red;
+                    btnHold1.Text = "Held";
+                }
+                else
+                {
+                    hold1 = true;
+                    btnHold1.BackgroundColor = Color.Gray;
+                    btnHold1.Text = "Hold";
+                }
             }
         }
 
-        private void btnHold2_Clicked(object sender, EventArgs e)
+        private async void btnHold2_Clicked(object sender, EventArgs e)
         {
-            if (hold2)
+            if (diceRoll2 == 0)
             {
-                hold2 = false;
-                btnHold2.BackgroundColor = Color.Red;
-                btnHold2.Text = "Held";
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
             else
             {
-                hold2 = true;
-                btnHold2.BackgroundColor = Color.Gray;
-                btnHold2.Text = "Hold";
+                if (hold2)
+                {
+                    hold2 = false;
+                    btnHold2.BackgroundColor = Color.Red;
+                    btnHold2.Text = "Held";
+                }
+                else
+                {
+                    hold2 = true;
+                    btnHold2.BackgroundColor = Color.Gray;
+                    btnHold2.Text = "Hold";
+                }
             }
         }
 
-        private void btnHold3_Clicked(object sender, EventArgs e)
+        private async void btnHold3_Clicked(object sender, EventArgs e)
         {
-            if (hold3)
+            if (diceRoll3 == 0)
             {
-                hold3 = false;
-                btnHold3.BackgroundColor = Color.Red;
-                btnHold3.Text = "Held";
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
             else
             {
-                hold3 = true;
-                btnHold3.BackgroundColor = Color.Gray;
-                btnHold3.Text = "Hold";
-            }
-
-        }
-
-        private void btnHold4_Clicked(object sender, EventArgs e)
-        {
-            if (hold4)
-            {
-                hold4 = false;
-                btnHold4.BackgroundColor = Color.Red;
-                btnHold4.Text = "Held";
-            }
-            else
-            {
-                hold4 = true;
-                btnHold4.BackgroundColor = Color.Gray;
-                btnHold4.Text = "Hold";
+                if (hold3)
+                {
+                    hold3 = false;
+                    btnHold3.BackgroundColor = Color.Red;
+                    btnHold3.Text = "Held";
+                }
+                else
+                {
+                    hold3 = true;
+                    btnHold3.BackgroundColor = Color.Gray;
+                    btnHold3.Text = "Hold";
+                }
             }
 
         }
 
-        private void btnHold5_Clicked(object sender, EventArgs e)
+        private async void btnHold4_Clicked(object sender, EventArgs e)
         {
-            if (hold5)
+            if (diceRoll2 == 0)
             {
-                hold5 = false;
-                btnHold5.BackgroundColor = Color.Red;
-                btnHold5.Text = "Held";
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
             else
             {
-                hold5 = true;
-                btnHold5.BackgroundColor = Color.Gray;
-                btnHold5.Text = "Hold";
+                if (hold4)
+                {
+                    hold4 = false;
+                    btnHold4.BackgroundColor = Color.Red;
+                    btnHold4.Text = "Held";
+                }
+                else
+                {
+                    hold4 = true;
+                    btnHold4.BackgroundColor = Color.Gray;
+                    btnHold4.Text = "Hold";
+                }
+            }
+
+        }
+
+        private async void btnHold5_Clicked(object sender, EventArgs e)
+        {
+            if (diceRoll5 == 0)
+            {
+                await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
+            }
+            else
+            {
+                if (hold5)
+                {
+                    hold5 = false;
+                    btnHold5.BackgroundColor = Color.Red;
+                    btnHold5.Text = "Held";
+                }
+                else
+                {
+                    hold5 = true;
+                    btnHold5.BackgroundColor = Color.Gray;
+                    btnHold5.Text = "Hold";
+                }
             }
         }
 
