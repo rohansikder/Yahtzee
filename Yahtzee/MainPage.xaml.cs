@@ -28,12 +28,12 @@ namespace Yahtzee
         int sixSum;
         int upperTotal;
 
-        int threeKindSum = 0;
-        int fourKindSum = 0;
-        int houseSum = 0;
-        int SstraightSum = 0;
-        int LStraightSum = 0;
-        int yahtzeeSum = 0;
+        int threeKindSum;
+        int fourKindSum;
+        int houseSum;
+        int SstraightSum;
+        int LStraightSum;
+        int yahtzeeSum;
         int chanceSum;
         int lowerTotal;
 
@@ -281,15 +281,6 @@ namespace Yahtzee
                 if (hold4 == true) diceRoll4 = random.Next(1, 7);
                 if (hold5 == true) diceRoll5 = random.Next(1, 7);
 
-
-                /*Used To test if combinations are working
-                diceRoll1 = 1;
-                diceRoll2 = 2;
-                diceRoll3 = 3;
-                diceRoll4 = 4;
-                diceRoll5 = 5;
-                */
-
                 dice1.Text = diceRoll1.ToString();
                 dice2.Text = diceRoll2.ToString();
                 dice3.Text = diceRoll3.ToString();
@@ -431,7 +422,7 @@ namespace Yahtzee
                 total = oneSum + total;
                 btnOne.IsEnabled = false;
                 upperTotal = upperTotal + oneSum;
-                if (total >= 63) total = bonus + total;
+                if (upperTotal >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
@@ -452,7 +443,7 @@ namespace Yahtzee
                 total = twoSum + total;
                 btnTwo.IsEnabled = false;
                 upperTotal = upperTotal + twoSum;
-                if (total >= 63) total = bonus + total;
+                if (upperTotal >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
@@ -473,7 +464,7 @@ namespace Yahtzee
                 total = threeSum + total;
                 btnThree.IsEnabled = false;
                 upperTotal = upperTotal + threeSum;
-                if (total >= 63) total = bonus + total;
+                if (upperTotal >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
@@ -494,7 +485,7 @@ namespace Yahtzee
                 total = fourSum + total;
                 btnFour.IsEnabled = false;
                 upperTotal = upperTotal + fourSum;
-                if (total >= 63) total = bonus + total;
+                if (upperTotal >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
@@ -515,7 +506,7 @@ namespace Yahtzee
                 total = fiveSum + total;
                 btnFive.IsEnabled = false;
                 upperTotal = upperTotal + fiveSum; 
-                if (total >= 63) total = bonus + total;
+                if (upperTotal >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
@@ -536,7 +527,7 @@ namespace Yahtzee
                 total = sixSum + total;
                 btnSix.IsEnabled = false;
                 upperTotal = upperTotal + sixSum;
-                if (total >= 63) total = bonus + total;
+                if (upperTotal >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
@@ -797,7 +788,7 @@ namespace Yahtzee
                 && btnThreeKind.IsEnabled == false && btnFourKind.IsEnabled == false && btnHouse.IsEnabled == false && btnSmallStraight.IsEnabled == false && btnLargeStraight.IsEnabled == false 
                 && btnYahtzee.IsEnabled == false && btnChance.IsEnabled == false)
             {
-                await DisplayAlert("GAME FINISHED", "Your Total was " + total + ". \nYou scored " + lowerTotal + " in the Lower total.\nYou scored " + upperTotal + " in the Upper Total" , "Play again");
+                await DisplayAlert("GAME FINISHED", "Your Total was " + total + ". \nYou scored " + lowerTotal + " in the Lower total.\nYou scored " + upperTotal + " in the Upper Total.", "Play again");
                 resetDice();
                 resetHold();
                 resetSum();
