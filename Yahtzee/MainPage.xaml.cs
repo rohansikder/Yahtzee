@@ -99,7 +99,7 @@ namespace Yahtzee
             {
                 twoSum = twoSum + diceRoll4;
             }
-            if (diceRoll5 == 3)
+            if (diceRoll5 == 2)
             {
                 twoSum = twoSum + diceRoll5;
             }
@@ -378,7 +378,7 @@ namespace Yahtzee
 
         private async void btnHold4_Clicked(object sender, EventArgs e)
         {
-            if (diceRoll2 == 0)
+            if (diceRoll4 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
@@ -510,7 +510,8 @@ namespace Yahtzee
             {
                 total = fiveSum + total;
                 btnFive.IsEnabled = false;
-                upperTotal = upperTotal + fiveSum; if (total >= 63) total = bonus + total;
+                upperTotal = upperTotal + fiveSum; 
+                if (total >= 63) total = bonus + total;
                 userTotal.Text = "Total: " + total;
                 userBonus.Text = "Get total of 63: " + upperTotal;
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
