@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Rohan Sikder 
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -50,6 +51,11 @@ namespace Yahtzee
             InitializeComponent();
         }
 
+
+        #region Create methods to do Combination calculations and store
+        /// <summary>
+        /// Did the combination calculation and showed user
+        /// </summary>
         private void upperSection()
         {
             oneSum = 0;
@@ -261,7 +267,14 @@ namespace Yahtzee
 
 
         }
+        #endregion
 
+        #region Random generator for dice
+        /// <summary>
+        ///  Created rolls to count user dice 
+        ///  Random generator for dice value
+        ///  displayed dice to user and called calculations
+        /// </summary>
         private void BtnDiceRollClicked(object sender, EventArgs e)
         {
             rolls--;
@@ -296,7 +309,13 @@ namespace Yahtzee
             }
             
         }
+        #endregion
 
+        #region
+        /// <summary>
+        /// checks if dice is not zero
+        /// If user clicks hold button the this disables dice from changing
+        /// </summary>
         private async void btnHold1_Clicked(object sender, EventArgs e)
         {
             if (diceRoll1 == 0)
@@ -413,7 +432,12 @@ namespace Yahtzee
                 }
             }
         }
+        #endregion
 
+        #region
+        /// <summary>
+        /// 
+        /// </summary>
         private async void btnOne_Clicked(object sender, EventArgs e)
         {
             
@@ -422,10 +446,7 @@ namespace Yahtzee
                 total = oneSum + total;
                 btnOne.IsEnabled = false;
                 upperTotal = upperTotal + oneSum;
-                if (upperTotal >= 63) total = bonus + total;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal;
+                updateUpper();
                 resetDice();
                 resetHold();
                 endGame();
@@ -444,9 +465,7 @@ namespace Yahtzee
                 btnTwo.IsEnabled = false;
                 upperTotal = upperTotal + twoSum;
                 if (upperTotal >= 63) total = bonus + total;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal;
+                updateUpper();
                 resetDice();
                 resetHold();
                 endGame();
@@ -464,10 +483,7 @@ namespace Yahtzee
                 total = threeSum + total;
                 btnThree.IsEnabled = false;
                 upperTotal = upperTotal + threeSum;
-                if (upperTotal >= 63) total = bonus + total;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal;
+                updateUpper();
                 resetDice();
                 resetHold();
                 endGame();
@@ -485,10 +501,7 @@ namespace Yahtzee
                 total = fourSum + total;
                 btnFour.IsEnabled = false;
                 upperTotal = upperTotal + fourSum;
-                if (upperTotal >= 63) total = bonus + total;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal;
+                updateUpper();
                 resetDice();
                 resetHold();
                 endGame();
@@ -505,11 +518,8 @@ namespace Yahtzee
             {
                 total = fiveSum + total;
                 btnFive.IsEnabled = false;
-                upperTotal = upperTotal + fiveSum; 
-                if (upperTotal >= 63) total = bonus + total;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal;
+                upperTotal = upperTotal + fiveSum;
+                updateUpper();
                 resetDice();
                 resetHold();
                 endGame();
@@ -527,10 +537,7 @@ namespace Yahtzee
                 total = sixSum + total;
                 btnSix.IsEnabled = false;
                 upperTotal = upperTotal + sixSum;
-                if (upperTotal >= 63) total = bonus + total;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + upperTotal;
-                lblUpperTotal.Text = "Upper Total: " + upperTotal;
+                updateUpper();
                 resetDice();
                 resetHold();
                 endGame();
@@ -672,6 +679,15 @@ namespace Yahtzee
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
+        }
+        #endregion
+
+        private void updateUpper()
+        {
+            if (upperTotal >= 63) total = bonus + total;
+            userTotal.Text = "Total: " + total;
+            userBonus.Text = "Get total of 63: " + upperTotal;
+            lblUpperTotal.Text = "Upper Total: " + upperTotal;
         }
 
         private void resetHold()
