@@ -437,6 +437,7 @@ namespace Yahtzee
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -457,6 +458,7 @@ namespace Yahtzee
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -477,6 +479,7 @@ namespace Yahtzee
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -497,6 +500,7 @@ namespace Yahtzee
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -517,6 +521,7 @@ namespace Yahtzee
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -537,6 +542,7 @@ namespace Yahtzee
                 lblUpperTotal.Text = "Upper Total: " + upperTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -555,6 +561,7 @@ namespace Yahtzee
                 lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -573,6 +580,7 @@ namespace Yahtzee
                 lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -591,6 +599,7 @@ namespace Yahtzee
                 lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -609,6 +618,7 @@ namespace Yahtzee
                 lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -627,7 +637,8 @@ namespace Yahtzee
                     lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                     resetDice();
                     resetHold();
-                }
+                    endGame();
+            }
             else
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -645,6 +656,7 @@ namespace Yahtzee
                 lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -663,6 +675,7 @@ namespace Yahtzee
                 lblLowerTotal.Text = "Lower Total: " + lowerTotal;
                 resetDice();
                 resetHold();
+                endGame();
             }
             else
             {
@@ -753,6 +766,38 @@ namespace Yahtzee
             var confirmed = await DisplayAlert("Confirm", "Are you sure?", "Yes", "No");
             if (confirmed) 
             { 
+                resetDice();
+                resetHold();
+                resetSum();
+                rolls = 3;
+                total = 0;
+                bonus = 0;
+                userTotal.Text = "Total: " + total;
+                userBonus.Text = "Get total of 63: " + bonus;
+                Roll.Text = "Roll Dice: 3";
+                btnOne.IsEnabled = true;
+                btnTwo.IsEnabled = true;
+                btnThree.IsEnabled = true;
+                btnFour.IsEnabled = true;
+                btnFive.IsEnabled = true;
+                btnSix.IsEnabled = true;
+                btnThreeKind.IsEnabled = true;
+                btnFourKind.IsEnabled = true;
+                btnHouse.IsEnabled = true;
+                btnSmallStraight.IsEnabled = true;
+                btnLargeStraight.IsEnabled = true;
+                btnYahtzee.IsEnabled = true;
+                btnChance.IsEnabled = true;
+            }
+        }
+
+        private async void endGame()
+        {
+            if (btnOne.IsEnabled == false && btnTwo.IsEnabled == false && btnThree.IsEnabled == false && btnFour.IsEnabled == false && btnFive.IsEnabled == false && btnSix.IsEnabled == false 
+                && btnThreeKind.IsEnabled == false && btnFourKind.IsEnabled == false && btnHouse.IsEnabled == false && btnSmallStraight.IsEnabled == false && btnLargeStraight.IsEnabled == false 
+                && btnYahtzee.IsEnabled == false && btnChance.IsEnabled == false)
+            {
+                await DisplayAlert("GAME FINISHED", "Your Total was " + total + ". \nYou scored " + lowerTotal + " in the Lower total.\nYou scored " + upperTotal + " in the Upper Total" , "Play again");
                 resetDice();
                 resetHold();
                 resetSum();
