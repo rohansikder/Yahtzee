@@ -144,5 +144,13 @@
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\yahtzeeicon_adaptive_fore.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="dice1.png" />
+    <Content Include="dice2.png" />
+    <Content Include="dice3.png" />
+    <Content Include="dice4.png" />
+    <Content Include="dice5.png" />
+    <Content Include="dice6.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

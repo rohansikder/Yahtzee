@@ -131,6 +131,12 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="dice1.png" />
+    <Content Include="dice2.png" />
+    <Content Include="dice3.png" />
+    <Content Include="dice4.png" />
+    <Content Include="dice5.png" />
+    <Content Include="dice6.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>

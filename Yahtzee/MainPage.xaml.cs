@@ -300,6 +300,7 @@ namespace Yahtzee
                 dice4.Text = diceRoll4.ToString();
                 dice5.Text = diceRoll5.ToString();
 
+
                 upperSection();
                 lowerSection();
             }
