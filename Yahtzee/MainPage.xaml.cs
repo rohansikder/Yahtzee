@@ -295,7 +295,16 @@ namespace Yahtzee
         private void BtnDiceRollClicked(object sender, EventArgs e)
         {
             //Vibrate when clicked
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
+
+
             //Loop only allows 3 dice rolls
             rolls--;
             Roll.Text = "Roll Dice: " + rolls;
@@ -337,7 +346,14 @@ namespace Yahtzee
         /// </summary>
         private async void btnHold1_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -361,7 +377,14 @@ namespace Yahtzee
 
         private async void btnHold2_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll2 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -385,7 +408,15 @@ namespace Yahtzee
 
         private async void btnHold3_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
+
             if (diceRoll3 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -410,7 +441,14 @@ namespace Yahtzee
 
         private async void btnHold4_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll4 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -435,7 +473,14 @@ namespace Yahtzee
 
         private async void btnHold5_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll5 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -464,7 +509,14 @@ namespace Yahtzee
         /// </summary>
         private async void btnOne_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = oneSum + total;
@@ -485,7 +537,14 @@ namespace Yahtzee
 
         private async void btnTwo_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = twoSum + total;
@@ -505,8 +564,15 @@ namespace Yahtzee
 
         private async void btnThree_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
-            if (diceRoll1 != '0')
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
+            if (diceRoll1 != 0)
             {
                 total = threeSum + total;
                 btnThree.IsEnabled = false;
@@ -525,7 +591,14 @@ namespace Yahtzee
 
         private async void btnFour_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = fourSum + total;
@@ -545,7 +618,14 @@ namespace Yahtzee
 
         private async void btnFive_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = fiveSum + total;
@@ -565,7 +645,14 @@ namespace Yahtzee
 
         private async void btnSix_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = sixSum + total;
@@ -585,7 +672,15 @@ namespace Yahtzee
 
         private async void btnThreeKind_Clicked(object sender, EventArgs e)
         {
+            try
+            {
             Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
+
             if (diceRoll1 != 0)
             {
                 total = threeKindSum + total;
@@ -606,9 +701,16 @@ namespace Yahtzee
 
         private async void btnFourKind_Clicked(object sender, EventArgs e)
         {
-            if (diceRoll1 != 0)
+            try
             {
                 Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
+            if (diceRoll1 != 0)
+            {
                 total = fourKindSum + total;
                 btnFourKind.IsEnabled = false;
                 lowerTotal = lowerTotal + fourKindSum;
@@ -628,7 +730,14 @@ namespace Yahtzee
 
         private async void btnHouse_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = houseSum + total;
@@ -649,7 +758,14 @@ namespace Yahtzee
 
         private async void btnSmallStraight_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = SstraightSum + total;
@@ -670,7 +786,14 @@ namespace Yahtzee
 
         private async void btnLargeStraight_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
                 {
                     total = LStraightSum + total;
@@ -692,7 +815,14 @@ namespace Yahtzee
 
         private async void btnYahtzee_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = yahtzeeSum + total;
@@ -714,7 +844,14 @@ namespace Yahtzee
 
         private async void btnChance_Clicked(object sender, EventArgs e)
         {
-            Vibration.Vibrate(10);
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
             if (diceRoll1 != 0)
             {
                 total = chanceSum + total;
@@ -833,7 +970,14 @@ namespace Yahtzee
             var confirmed = await DisplayAlert("Confirm", "Are you sure?", "Yes", "No");
             if (confirmed) 
             {
-                Vibration.Vibrate(100);
+                try
+                {
+                    Vibration.Vibrate(100);
+                }
+                catch (FeatureNotSupportedException)
+                {
+                    // Feature not supported on device
+                }
                 resetDice();
                 resetHold();
                 resetSum();
@@ -879,7 +1023,14 @@ namespace Yahtzee
                 && btnThreeKind.IsEnabled == false && btnFourKind.IsEnabled == false && btnHouse.IsEnabled == false && btnSmallStraight.IsEnabled == false && btnLargeStraight.IsEnabled == false 
                 && btnYahtzee.IsEnabled == false && btnChance.IsEnabled == false)
             {
-                Vibration.Vibrate(100);
+                try
+                {
+                    Vibration.Vibrate(100);
+                }
+                catch (FeatureNotSupportedException)
+                {
+                    // Feature not supported on device
+                }
                 await DisplayAlert("GAME FINISHED", "Your Total was " + total + ". \nYou scored " + lowerTotal + " in the Lower total.\nYou scored " + upperTotal + " in the Upper Total.", "Play again");
                 resetDice();
                 resetHold();
