@@ -44,6 +44,21 @@ namespace Yahtzee
         bool hold4 = true;
         bool hold5 = true;
 
+        bool keepOne = true;
+        bool keepTwo = true;
+        bool keepThree = true;
+        bool keepFour = true;
+        bool keepFive = true;
+        bool keepSix = true;
+        bool keepThreeKind = true;
+        bool keepFourKind = true;
+        bool keepFull = true;
+        bool keepLarge = true;
+        bool keepSmall = true;
+        bool keepYahtzee = true;
+        bool keepChance = true;
+
+
         Random random;
 
         public MainPage()
@@ -86,7 +101,7 @@ namespace Yahtzee
             {
                 oneSum = oneSum + diceRoll5;
             }
-            oneValue.Text = oneSum.ToString();
+            if(keepOne == true)oneValue.Text = oneSum.ToString();
 
             //calc for two combo
             if (diceRoll1 == 2)
@@ -109,7 +124,7 @@ namespace Yahtzee
             {
                 twoSum = twoSum + diceRoll5;
             }
-            twoValue.Text = twoSum.ToString();
+            if (keepTwo == true) twoValue.Text = twoSum.ToString();
 
             //calc for three combo
             if (diceRoll1 == 3)
@@ -132,7 +147,7 @@ namespace Yahtzee
             {
                 threeSum = threeSum + diceRoll5;
             }
-            threeValue.Text = threeSum.ToString();
+            if (keepThree == true) threeValue.Text = threeSum.ToString();
 
             //calc for four combo
             if (diceRoll1 == 4)
@@ -155,7 +170,7 @@ namespace Yahtzee
             {
                 fourSum = fourSum + diceRoll5;
             }
-            fourValue.Text = fourSum.ToString();
+            if (keepFour == true) fourValue.Text = fourSum.ToString();
 
             //calc for five combo
             if (diceRoll1 == 5)
@@ -178,7 +193,7 @@ namespace Yahtzee
             {
                 fiveSum = fiveSum + diceRoll5;
             }
-            fiveValue.Text = fiveSum.ToString();
+            if (keepFive == true) fiveValue.Text = fiveSum.ToString();
 
             //calc for six combo
             if (diceRoll1 == 6)
@@ -201,7 +216,7 @@ namespace Yahtzee
             {
                 sixSum = sixSum + diceRoll5;
             }
-            sixValue.Text = sixSum.ToString();
+            if (keepSix == true) sixValue.Text = sixSum.ToString();
 
         }
 
@@ -221,14 +236,14 @@ namespace Yahtzee
             {
                 threeKindSum = diceRoll1 + diceRoll2 + diceRoll3 + diceRoll4 + diceRoll5;
             }
-            threeKindValue.Text = threeKindSum.ToString();
+            if (keepThreeKind == true) threeKindValue.Text = threeKindSum.ToString();
 
             //FourKind combo
             if (oneSum == 4 || twoSum == 8 || threeSum == 12 || fourSum == 16 || fiveSum == 20 || sixSum == 24)
             {
                 fourKindSum = diceRoll1 + diceRoll2 + diceRoll3 + diceRoll4 + diceRoll5;
             }
-            fourKindValue.Text = fourKindSum.ToString();
+            if (keepFourKind == true) fourKindValue.Text = fourKindSum.ToString();
 
             //FullHouse combo
             if ((oneSum == 3 || twoSum == 6 || threeSum == 9 || fourSum == 12 || fiveSum == 15 || sixSum == 18)
@@ -236,7 +251,7 @@ namespace Yahtzee
             {
                 houseSum = 25;
             }
-            houseValue.Text = houseSum.ToString();
+            if (keepFull == true) houseValue.Text = houseSum.ToString();
 
             //SmallStraight combo
             if ((oneSum == 1 && twoSum == 2 && threeSum == 3 && fourSum == 4) || (twoSum == 2 && threeSum == 3 && fourSum == 4 && fiveSum == 5)
@@ -244,7 +259,7 @@ namespace Yahtzee
             {
                 SstraightSum = 30;
             }
-            smallStraightValue.Text = SstraightSum.ToString();
+            if (keepSmall == true) smallStraightValue.Text = SstraightSum.ToString();
 
             //LargeStraight Combo
             if ((oneSum == 1 && twoSum == 2 && threeSum == 3 && fourSum == 4 && fiveSum == 5)
@@ -252,18 +267,18 @@ namespace Yahtzee
             {
                 LStraightSum = 40;
             }
-            largeStraightValue.Text = LStraightSum.ToString();
+            if (keepLarge == true) largeStraightValue.Text = LStraightSum.ToString();
 
             //Yhatzee combo
             if (diceRoll1 == diceRoll2 && diceRoll2 == diceRoll3 && diceRoll3 == diceRoll4 && diceRoll4 == diceRoll5)
             {
                 yahtzeeSum = 50;
             }
-            yahtzeeValue.Text = yahtzeeSum.ToString();
+            if (keepYahtzee == true) yahtzeeValue.Text = yahtzeeSum.ToString();
 
             //chance combo
             chanceSum = diceRoll1 + diceRoll2 + diceRoll3 + diceRoll4 + diceRoll5;
-            chanceValue.Text = chanceSum.ToString();
+            if (keepChance == true) chanceValue.Text = chanceSum.ToString();
 
 
         }
@@ -300,7 +315,6 @@ namespace Yahtzee
                 dice4.Text = diceRoll4.ToString();
                 dice5.Text = diceRoll5.ToString();
 
-
                 upperSection();
                 lowerSection();
             }
@@ -312,7 +326,7 @@ namespace Yahtzee
         }
         #endregion
 
-        #region
+        #region Event Handlers for whne user clicks keep button
         /// <summary>
         /// checks if dice is not zero
         /// If user clicks hold button the this disables dice from changing
@@ -447,6 +461,7 @@ namespace Yahtzee
                 total = oneSum + total;
                 btnOne.IsEnabled = false;
                 upperTotal = upperTotal + oneSum;
+                keepOne = false;
                 updateUpper();
                 resetDice();
                 resetHold();
@@ -465,11 +480,11 @@ namespace Yahtzee
                 total = twoSum + total;
                 btnTwo.IsEnabled = false;
                 upperTotal = upperTotal + twoSum;
-                if (upperTotal >= 63) total = bonus + total;
                 updateUpper();
                 resetDice();
                 resetHold();
                 endGame();
+                keepTwo = false;
             }
             else
             {
@@ -488,6 +503,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepThree = false;
             }
             else
             {
@@ -506,6 +522,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepFour = false;
             }
             else
             {
@@ -524,6 +541,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepFive = false;
             }
             else
             {
@@ -542,6 +560,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepSix = false;
             }
             else
             {
@@ -561,6 +580,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepThreeKind = false;
             }
             else
             {
@@ -580,6 +600,8 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepFourKind = false;
+
             }
             else
             {
@@ -599,6 +621,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepFull = false;
             }
             else
             {
@@ -618,6 +641,7 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepSmall = false;
             }
             else
             {
@@ -637,6 +661,8 @@ namespace Yahtzee
                     resetDice();
                     resetHold();
                     endGame();
+                    keepLarge = false;
+
             }
             else
             {
@@ -656,6 +682,8 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepYahtzee = false;
+
             }
             else
             {
@@ -675,6 +703,8 @@ namespace Yahtzee
                 resetDice();
                 resetHold();
                 endGame();
+                keepChance = false;
+
             }
             else
             {
@@ -767,6 +797,20 @@ namespace Yahtzee
             yahtzeeValue.Text = yahtzeeSum.ToString();
             chanceValue.Text = chanceSum.ToString();
             lblLowerTotal.Text = "Lower Total: 0";
+
+            keepOne = true;
+            keepTwo = true;
+            keepThree = true;
+            keepFour = true;
+            keepFive = true;
+            keepSix = true;
+            keepThreeKind = true;
+            keepFourKind = true;
+            keepFull = true;
+            keepLarge = true;
+            keepSmall = true;
+            keepYahtzee = true;
+            keepChance = true;
         }
 
         private async void Restart_Clicked(object sender, EventArgs e)
@@ -796,6 +840,19 @@ namespace Yahtzee
                 btnLargeStraight.IsEnabled = true;
                 btnYahtzee.IsEnabled = true;
                 btnChance.IsEnabled = true;
+                keepOne = true;
+                keepTwo = true;
+                keepThree = true;
+                keepFour = true;
+                keepFive = true;
+                keepSix = true;
+                keepThreeKind = true;
+                keepFourKind = true;
+                keepFull = true;
+                keepLarge = true;
+                keepSmall = true;
+                keepYahtzee = true;
+                keepChance = true;
             }
         }
 
