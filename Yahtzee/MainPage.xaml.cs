@@ -11,6 +11,8 @@ namespace Yahtzee
 {
     public partial class MainPage : ContentPage
     {
+
+        //Declare all variables
         int total;
         int bonus = 35;
         int rolls = 3;
@@ -58,7 +60,6 @@ namespace Yahtzee
         bool keepYahtzee = true;
         bool keepChance = true;
 
-
         Random random;
 
         public MainPage()
@@ -66,10 +67,10 @@ namespace Yahtzee
             InitializeComponent();
         }
 
-
         #region Create methods to do Combination calculations and store
         /// <summary>
         /// Did the combination calculation and showed user
+        /// if statement to keep score when user clicks keep
         /// </summary>
         private void upperSection()
         {
@@ -288,10 +289,11 @@ namespace Yahtzee
         /// <summary>
         ///  Created rolls to count user dice 
         ///  Random generator for dice value
-        ///  displayed dice to user and called calculations
+        ///  Displayed dice to user and called calculations
         /// </summary>
         private void BtnDiceRollClicked(object sender, EventArgs e)
         {
+            //Loop only allows 3 dice rolls
             rolls--;
             Roll.Text = "Roll Dice: " + rolls;
             if (rolls >= 0)
@@ -302,7 +304,6 @@ namespace Yahtzee
                     random = new Random();
                 }
 
-                /**/
                 if (hold1 == true) diceRoll1 = random.Next(1, 7);
                 if (hold2 == true) diceRoll2 = random.Next(1, 7);
                 if (hold3 == true) diceRoll3 = random.Next(1, 7);
@@ -318,7 +319,7 @@ namespace Yahtzee
                 upperSection();
                 lowerSection();
             }
-            else 
+            else
             {
                 Roll.IsEnabled = false;
             }
@@ -326,7 +327,7 @@ namespace Yahtzee
         }
         #endregion
 
-        #region Event Handlers for whne user clicks keep button
+        #region Event Handlers for when user clicks hold buttons
         /// <summary>
         /// checks if dice is not zero
         /// If user clicks hold button the this disables dice from changing
@@ -449,13 +450,13 @@ namespace Yahtzee
         }
         #endregion
 
-        #region
+        #region All Keep Bottoms event handlers
         /// <summary>
-        /// 
+        /// if button clicked adds to toals and reset dice and resets hold and checks if its end of the game
         /// </summary>
         private async void btnOne_Clicked(object sender, EventArgs e)
         {
-            
+
             if (diceRoll1 != 0)
             {
                 total = oneSum + total;
@@ -469,6 +470,7 @@ namespace Yahtzee
             }
             else
             {
+                // user has not rolled dice therefore no combos can be calculated
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
             }
         }
@@ -713,6 +715,8 @@ namespace Yahtzee
         }
         #endregion
 
+        #region Methods to updated,reset and restart
+        // updates upperTotal
         private void updateUpper()
         {
             if (upperTotal >= 63) total = bonus + total;
@@ -720,7 +724,8 @@ namespace Yahtzee
             userBonus.Text = "Get total of 63: " + upperTotal;
             lblUpperTotal.Text = "Upper Total: " + upperTotal;
         }
-
+        
+        // resets hold for dice after score is kept
         private void resetHold()
         {
             btnHold1.BackgroundColor = Color.DimGray;
@@ -740,6 +745,7 @@ namespace Yahtzee
             hold5 = true;
         }
 
+        // dice and rolls is reset after score is kept 
         private void resetDice()
         {
             diceRoll1 = 0;
@@ -759,6 +765,7 @@ namespace Yahtzee
             dice5.Text = diceRoll5.ToString();
         }
 
+        //reset all totals and scores
         private void resetSum()
         {
             //Upper section
@@ -798,21 +805,9 @@ namespace Yahtzee
             chanceValue.Text = chanceSum.ToString();
             lblLowerTotal.Text = "Lower Total: 0";
 
-            keepOne = true;
-            keepTwo = true;
-            keepThree = true;
-            keepFour = true;
-            keepFive = true;
-            keepSix = true;
-            keepThreeKind = true;
-            keepFourKind = true;
-            keepFull = true;
-            keepLarge = true;
-            keepSmall = true;
-            keepYahtzee = true;
-            keepChance = true;
         }
 
+        //Restarts full game calls reset methods and sets all bools to true
         private async void Restart_Clicked(object sender, EventArgs e)
         {
             var confirmed = await DisplayAlert("Confirm", "Are you sure?", "Yes", "No");
@@ -856,6 +851,7 @@ namespace Yahtzee
             }
         }
 
+        //checks if last kept button is pressed and shows user final score and restarts game 
         private async void endGame()
         {
             if (btnOne.IsEnabled == false && btnTwo.IsEnabled == false && btnThree.IsEnabled == false && btnFour.IsEnabled == false && btnFive.IsEnabled == false && btnSix.IsEnabled == false 
@@ -885,8 +881,23 @@ namespace Yahtzee
                 btnLargeStraight.IsEnabled = true;
                 btnYahtzee.IsEnabled = true;
                 btnChance.IsEnabled = true;
+
+                keepOne = true;
+                keepTwo = true;
+                keepThree = true;
+                keepFour = true;
+                keepFive = true;
+                keepSix = true;
+                keepThreeKind = true;
+                keepFourKind = true;
+                keepFull = true;
+                keepLarge = true;
+                keepSmall = true;
+                keepYahtzee = true;
+                keepChance = true;
             }
         }
+        #endregion
 
     }//End of public class
 }//End namespace

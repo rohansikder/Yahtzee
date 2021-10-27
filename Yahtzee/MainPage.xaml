@@ -4,10 +4,12 @@
              x:Class="Yahtzee.MainPage">
 
     <StackLayout BackgroundColor="#184e77" Padding="10">
+        <!-- Yahtzee Banner -->
         <Frame BackgroundColor="#168aad" Padding="15" CornerRadius="15">
             <Label Text="Yahtzee" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Italic"/>
         </Frame>
         <Button x:Name="Restart" Clicked="Restart_Clicked" Text="Restart"  CornerRadius="5" Margin="100,1,100,1" BackgroundColor="red" FontSize="Medium"/>
+        <!-- Grid for dice and hold button-->
         <Grid Margin="1" HeightRequest="150" WidthRequest="600" HorizontalOptions="Center" VerticalOptions="Center"
               ColumnSpacing="1" RowSpacing="1">
 
@@ -45,10 +47,10 @@
 
         </Grid>
 
+         <!-- Grid for all scores and keep buttons-->
         <Grid BackgroundColor="#1a759f" Margin="1" HeightRequest="600" WidthRequest="470" HorizontalOptions="Center" VerticalOptions="Center"
               ColumnSpacing="1" RowSpacing="1" >
            
-
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -67,6 +69,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <!--Keep buttons-->
            <Button x:Name="btnOne" Clicked="btnOne_Clicked" BackgroundColor="#ff8800" Grid.Row="0" Grid.Column="0" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
            <Button x:Name="btnTwo" Clicked="btnTwo_Clicked" BackgroundColor="#ff8800" Grid.Row="1" Grid.Column="0" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
            <Button x:Name="btnThree" Clicked="btnThree_Clicked" BackgroundColor="#ff8800" Grid.Row="2" Grid.Column="0" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
@@ -101,6 +104,7 @@
             <Label BackgroundColor="#76c893" Grid.Row="6" Grid.Column="0" Margin="2,1,2,5" Text="Section Bonus: +35" Padding="5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
             <Label x:Name="userBonus" BackgroundColor="#76c893" Grid.Row="6" Grid.Column="1" Margin="1,1,1,5" Text="Get total of 63: 0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Padding="5" TextColor="White"/>
 
+            <!--Keep buttons-->
             <Button x:Name="btnThreeKind" Clicked="btnThreeKind_Clicked" BackgroundColor="#ff8800" Grid.Row="0" Grid.Column="3" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
             <Button x:Name="btnFourKind" Clicked="btnFourKind_Clicked" BackgroundColor="#ff8800" Grid.Row="1" Grid.Column="3" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
             <Button x:Name="btnHouse" Clicked="btnHouse_Clicked" BackgroundColor="#ff8800" Grid.Row="2" Grid.Column="3" Margin="4" Text="Keep" CornerRadius="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Micro"/>
@@ -130,7 +134,6 @@
         <BoxView BackgroundColor="White" Grid.Row="6" Grid.Column="4" Margin="5" CornerRadius="5"/>
         <Label x:Name="chanceValue" Text="0" Grid.Row="6" Grid.Column="4" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Medium" TextColor="Black"/>
 
-
             <Label BackgroundColor="#76c893" Grid.Row="0" Grid.Column="5" Margin="3" Text="Three of a kind" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
             <Label BackgroundColor="#76c893" Grid.Row="1" Grid.Column="5" Margin="3" Text="Four of a kind" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
             <Label BackgroundColor="#76c893" Grid.Row="2" Grid.Column="5" Margin="3" Text="Full House" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
@@ -139,9 +142,9 @@
             <Label BackgroundColor="#76c893" Grid.Row="5" Grid.Column="5" Margin="3" Text="Yahtzee" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
             <Label BackgroundColor="#76c893" Grid.Row="6" Grid.Column="5" Margin="3" Text="Chance" Padding="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White"/>
 
-            
         </Grid>
-
+        
+        <!-- Info for user and roll dice button-->
         <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="1">
             <Label x:Name="lblUpperTotal" Text="Upper Total: 0" FontSize="Small" TextColor="White"/>
             <Button BackgroundColor="#d9ed92" x:Name="Roll" Text="Roll Dice: 3" Margin="25,0,25,0" CornerRadius="5" Clicked="BtnDiceRollClicked" TextColor="Black"/>
