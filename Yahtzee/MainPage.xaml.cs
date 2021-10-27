@@ -8,6 +8,11 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 
+/// <summary>
+/// You can use StyleId to make this simipler and do it all in one method
+/// Use FindByName to update lable in UI
+/// </summary>
+
 namespace Yahtzee
 {
     public partial class MainPage : ContentPage
