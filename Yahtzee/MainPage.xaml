@@ -1,4 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--Rohan Sikder - G00389052-->
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Yahtzee.MainPage">
@@ -9,7 +10,7 @@
             <Label Text="Yahtzee" HorizontalTextAlignment="Center" TextColor="White" FontSize="36" FontAttributes="Italic"/>
         </Frame>
         <Button x:Name="Restart" Clicked="Restart_Clicked" Text="Restart"  CornerRadius="5" Margin="100,1,100,1" BackgroundColor="red" FontSize="Medium"/>
-        <!-- Grid for dice and hold button-->
+        <!-- Grid for dice and hold buttons-->
         <Grid Margin="1" HeightRequest="150" WidthRequest="600" HorizontalOptions="Center" VerticalOptions="Center"
               ColumnSpacing="1" RowSpacing="1">
 

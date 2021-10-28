@@ -1,16 +1,13 @@
-﻿// Rohan Sikder 
+﻿//Rohan Sikder - G00389052
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
-/// <summary>
+/// <summary> Notes From class - Things that could be changed
 /// You can use StyleId to make this simipler and do it all in one method
 /// Use FindByName to update lable in UI
+/// Methods start with capital letter
+/// Refactor all the things 
 /// </summary>
 
 namespace Yahtzee
@@ -108,7 +105,7 @@ namespace Yahtzee
             {
                 oneSum = oneSum + diceRoll5;
             }
-            if(keepOne == true)oneValue.Text = oneSum.ToString();
+            if (keepOne == true) oneValue.Text = oneSum.ToString();
 
             //calc for two combo
             if (diceRoll1 == 2)
@@ -300,15 +297,7 @@ namespace Yahtzee
         private void BtnDiceRollClicked(object sender, EventArgs e)
         {
             //Vibrate when clicked
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
-
+            buttonVibrate();
 
             //Loop only allows 3 dice rolls
             rolls--;
@@ -340,7 +329,7 @@ namespace Yahtzee
             {
                 Roll.IsEnabled = false;
             }
-            
+
         }
         #endregion
 
@@ -351,14 +340,7 @@ namespace Yahtzee
         /// </summary>
         private async void btnHold1_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -382,14 +364,7 @@ namespace Yahtzee
 
         private async void btnHold2_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll2 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -413,15 +388,7 @@ namespace Yahtzee
 
         private async void btnHold3_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
-
+            buttonVibrate();
             if (diceRoll3 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -446,14 +413,7 @@ namespace Yahtzee
 
         private async void btnHold4_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll4 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -478,14 +438,7 @@ namespace Yahtzee
 
         private async void btnHold5_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll5 == 0)
             {
                 await DisplayAlert("Roll Dice", "You have not rolled the dice yet, Please Roll by clicking roll dice at the bottom.", "Ok");
@@ -514,14 +467,7 @@ namespace Yahtzee
         /// </summary>
         private async void btnOne_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = oneSum + total;
@@ -542,14 +488,7 @@ namespace Yahtzee
 
         private async void btnTwo_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = twoSum + total;
@@ -569,14 +508,7 @@ namespace Yahtzee
 
         private async void btnThree_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = threeSum + total;
@@ -596,14 +528,7 @@ namespace Yahtzee
 
         private async void btnFour_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = fourSum + total;
@@ -623,14 +548,7 @@ namespace Yahtzee
 
         private async void btnFive_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = fiveSum + total;
@@ -650,14 +568,7 @@ namespace Yahtzee
 
         private async void btnSix_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = sixSum + total;
@@ -677,22 +588,13 @@ namespace Yahtzee
 
         private async void btnThreeKind_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-            Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
-
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = threeKindSum + total;
                 btnThreeKind.IsEnabled = false;
                 lowerTotal = lowerTotal + threeKindSum;
-                userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
+                updateLower();
                 resetDice();
                 resetHold();
                 endGame();
@@ -706,21 +608,13 @@ namespace Yahtzee
 
         private async void btnFourKind_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = fourKindSum + total;
                 btnFourKind.IsEnabled = false;
                 lowerTotal = lowerTotal + fourKindSum;
-                userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
+                updateLower();
                 resetDice();
                 resetHold();
                 endGame();
@@ -735,21 +629,13 @@ namespace Yahtzee
 
         private async void btnHouse_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = houseSum + total;
                 btnHouse.IsEnabled = false;
                 lowerTotal = lowerTotal + houseSum;
-                userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
+                updateLower();
                 resetDice();
                 resetHold();
                 endGame();
@@ -763,21 +649,13 @@ namespace Yahtzee
 
         private async void btnSmallStraight_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = SstraightSum + total;
                 btnSmallStraight.IsEnabled = false;
                 lowerTotal = lowerTotal + SstraightSum;
-                userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
+                updateLower();
                 resetDice();
                 resetHold();
                 endGame();
@@ -791,25 +669,17 @@ namespace Yahtzee
 
         private async void btnLargeStraight_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
-                {
-                    total = LStraightSum + total;
-                    btnLargeStraight.IsEnabled = false;
-                    lowerTotal = lowerTotal + LStraightSum;
-                    userTotal.Text = "Total: " + total;
-                    lblLowerTotal.Text = "Lower Total: " + lowerTotal;
-                    resetDice();
-                    resetHold();
-                    endGame();
-                    keepLarge = false;
+            {
+                total = LStraightSum + total;
+                btnLargeStraight.IsEnabled = false;
+                lowerTotal = lowerTotal + LStraightSum;
+                updateLower();
+                resetDice();
+                resetHold();
+                endGame();
+                keepLarge = false;
 
             }
             else
@@ -820,21 +690,13 @@ namespace Yahtzee
 
         private async void btnYahtzee_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = yahtzeeSum + total;
                 btnYahtzee.IsEnabled = false;
                 lowerTotal = lowerTotal + yahtzeeSum;
-                userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
+                updateLower();
                 resetDice();
                 resetHold();
                 endGame();
@@ -849,21 +711,13 @@ namespace Yahtzee
 
         private async void btnChance_Clicked(object sender, EventArgs e)
         {
-            try
-            {
-                Vibration.Vibrate(10);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                // Feature not supported on device
-            }
+            buttonVibrate();
             if (diceRoll1 != 0)
             {
                 total = chanceSum + total;
                 btnChance.IsEnabled = false;
                 lowerTotal = lowerTotal + chanceSum;
-                userTotal.Text = "Total: " + total;
-                lblLowerTotal.Text = "Lower Total: " + lowerTotal;
+                updateLower();
                 resetDice();
                 resetHold();
                 endGame();
@@ -886,7 +740,14 @@ namespace Yahtzee
             userBonus.Text = "Get total of 63: " + upperTotal;
             lblUpperTotal.Text = "Upper Total: " + upperTotal;
         }
-        
+
+        // Updates lowerTotal
+        private void updateLower()
+        {
+            userTotal.Text = "Total: " + total;
+            lblLowerTotal.Text = "Lower Total: " + lowerTotal;
+        }
+
         // resets hold for dice after score is kept
         private void resetHold()
         {
@@ -905,6 +766,19 @@ namespace Yahtzee
             hold3 = true;
             hold4 = true;
             hold5 = true;
+        }
+
+        // Vibrate
+        private void buttonVibrate()
+        {
+            try
+            {
+                Vibration.Vibrate(10);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                // Feature not supported on device
+            }
         }
 
         // dice and rolls is reset after score is kept 
@@ -969,11 +843,51 @@ namespace Yahtzee
 
         }
 
-        //Restarts full game calls reset methods and sets all bools to true
+        //resets everything
+        private void resetGame()
+        {
+            resetDice();
+            resetHold();
+            resetSum();
+            rolls = 3;
+            total = 0;
+            bonus = 0;
+            userTotal.Text = "Total: " + total;
+            userBonus.Text = "Get total of 63: " + bonus;
+            Roll.Text = "Roll Dice: 3";
+            btnOne.IsEnabled = true;
+            btnTwo.IsEnabled = true;
+            btnThree.IsEnabled = true;
+            btnFour.IsEnabled = true;
+            btnFive.IsEnabled = true;
+            btnSix.IsEnabled = true;
+            btnThreeKind.IsEnabled = true;
+            btnFourKind.IsEnabled = true;
+            btnHouse.IsEnabled = true;
+            btnSmallStraight.IsEnabled = true;
+            btnLargeStraight.IsEnabled = true;
+            btnYahtzee.IsEnabled = true;
+            btnChance.IsEnabled = true;
+            keepOne = true;
+            keepTwo = true;
+            keepThree = true;
+            keepFour = true;
+            keepFive = true;
+            keepSix = true;
+            keepThreeKind = true;
+            keepFourKind = true;
+            keepFull = true;
+            keepLarge = true;
+            keepSmall = true;
+            keepYahtzee = true;
+            keepChance = true;
+        }
+
+        //Restarts full game
         private async void Restart_Clicked(object sender, EventArgs e)
         {
             var confirmed = await DisplayAlert("Confirm", "Are you sure?", "Yes", "No");
-            if (confirmed) 
+            if (confirmed)
             {
                 try
                 {
@@ -983,49 +897,15 @@ namespace Yahtzee
                 {
                     // Feature not supported on device
                 }
-                resetDice();
-                resetHold();
-                resetSum();
-                rolls = 3;
-                total = 0;
-                bonus = 0;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + bonus;
-                Roll.Text = "Roll Dice: 3";
-                btnOne.IsEnabled = true;
-                btnTwo.IsEnabled = true;
-                btnThree.IsEnabled = true;
-                btnFour.IsEnabled = true;
-                btnFive.IsEnabled = true;
-                btnSix.IsEnabled = true;
-                btnThreeKind.IsEnabled = true;
-                btnFourKind.IsEnabled = true;
-                btnHouse.IsEnabled = true;
-                btnSmallStraight.IsEnabled = true;
-                btnLargeStraight.IsEnabled = true;
-                btnYahtzee.IsEnabled = true;
-                btnChance.IsEnabled = true;
-                keepOne = true;
-                keepTwo = true;
-                keepThree = true;
-                keepFour = true;
-                keepFive = true;
-                keepSix = true;
-                keepThreeKind = true;
-                keepFourKind = true;
-                keepFull = true;
-                keepLarge = true;
-                keepSmall = true;
-                keepYahtzee = true;
-                keepChance = true;
+                resetGame();
             }
         }
 
         //checks if last kept button is pressed and shows user final score and restarts game 
         private async void endGame()
         {
-            if (btnOne.IsEnabled == false && btnTwo.IsEnabled == false && btnThree.IsEnabled == false && btnFour.IsEnabled == false && btnFive.IsEnabled == false && btnSix.IsEnabled == false 
-                && btnThreeKind.IsEnabled == false && btnFourKind.IsEnabled == false && btnHouse.IsEnabled == false && btnSmallStraight.IsEnabled == false && btnLargeStraight.IsEnabled == false 
+            if (btnOne.IsEnabled == false && btnTwo.IsEnabled == false && btnThree.IsEnabled == false && btnFour.IsEnabled == false && btnFive.IsEnabled == false && btnSix.IsEnabled == false
+                && btnThreeKind.IsEnabled == false && btnFourKind.IsEnabled == false && btnHouse.IsEnabled == false && btnSmallStraight.IsEnabled == false && btnLargeStraight.IsEnabled == false
                 && btnYahtzee.IsEnabled == false && btnChance.IsEnabled == false)
             {
                 try
@@ -1037,42 +917,7 @@ namespace Yahtzee
                     // Feature not supported on device
                 }
                 await DisplayAlert("GAME FINISHED", "Your Total was " + total + ". \nYou scored " + lowerTotal + " in the Lower total.\nYou scored " + upperTotal + " in the Upper Total.", "Play again");
-                resetDice();
-                resetHold();
-                resetSum();
-                rolls = 3;
-                total = 0;
-                bonus = 0;
-                userTotal.Text = "Total: " + total;
-                userBonus.Text = "Get total of 63: " + bonus;
-                Roll.Text = "Roll Dice: 3";
-                btnOne.IsEnabled = true;
-                btnTwo.IsEnabled = true;
-                btnThree.IsEnabled = true;
-                btnFour.IsEnabled = true;
-                btnFive.IsEnabled = true;
-                btnSix.IsEnabled = true;
-                btnThreeKind.IsEnabled = true;
-                btnFourKind.IsEnabled = true;
-                btnHouse.IsEnabled = true;
-                btnSmallStraight.IsEnabled = true;
-                btnLargeStraight.IsEnabled = true;
-                btnYahtzee.IsEnabled = true;
-                btnChance.IsEnabled = true;
-
-                keepOne = true;
-                keepTwo = true;
-                keepThree = true;
-                keepFour = true;
-                keepFive = true;
-                keepSix = true;
-                keepThreeKind = true;
-                keepFourKind = true;
-                keepFull = true;
-                keepLarge = true;
-                keepSmall = true;
-                keepYahtzee = true;
-                keepChance = true;
+                resetGame();
             }
         }
         #endregion
