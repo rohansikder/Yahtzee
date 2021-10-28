@@ -258,8 +258,8 @@ namespace Yahtzee
             if (keepFull == true) houseValue.Text = houseSum.ToString();
 
             //SmallStraight combo
-            if ((oneSum == 1 && twoSum == 2 && threeSum == 3 && fourSum == 4) || (twoSum == 2 && threeSum == 3 && fourSum == 4 && fiveSum == 5)
-                || (threeSum == 3 && fourSum == 4 && fiveSum == 5 && sixSum == 6))
+            if ((oneSum >= 1 && twoSum >= 2 && threeSum >= 3 && fourSum >= 4) || (twoSum >= 2 && threeSum >= 3 && fourSum >= 4 && fiveSum >= 5)
+                || (threeSum >= 3 && fourSum >= 4 && fiveSum >= 5 && sixSum >= 6))
             {
                 SstraightSum = 30;
             }
